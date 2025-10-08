@@ -4,28 +4,18 @@ footer: false
 
 # Introduction {#introduction}
 
-:::info You are reading the documentation for Vue 3!
+- goal 
+  - Vue 3
 
-- Vue 2 support has ended on **Dec 31, 2023**. Learn more about [Vue 2 EOL](https://v2.vuejs.org/eol/).
-- Upgrading from Vue 2? Check out the [Migration Guide](https://v3-migration.vuejs.org/).
-  :::
-
-<style src="@theme/styles/vue-mastery.css"></style>
-<div class="vue-mastery-link">
-  <a href="https://www.vuemastery.com/courses/" target="_blank">
-    <div class="banner-wrapper">
-      <img class="banner" alt="Vue Mastery banner" width="96px" height="56px" src="https://storage.googleapis.com/vue-mastery.appspot.com/flamelink/media/vuemastery-graphical-link-96x56.png" />
-    </div>
-    <p class="description">Learn Vue with video tutorials on <span>VueMastery.com</span></p>
-    <div class="logo-wrapper">
-        <img alt="Vue Mastery Logo" width="25px" src="https://storage.googleapis.com/vue-mastery.appspot.com/flamelink/media/vue-mastery-logo.png" />
-    </div>
-  </a>
-</div>
+- Vue 2
+  - [EOL](https://v2.vuejs.org/eol/).
+  - [Migration Guide v2 - v3](https://v3-migration.vuejs.org/)
 
 ## What is Vue? {#what-is-vue}
 
-Vue (pronounced /vjuː/, like **view**) is a JavaScript framework for building user interfaces. It builds on top of standard HTML, CSS, and JavaScript and provides a declarative, component-based programming model that helps you efficiently develop user interfaces of any complexity.
+- Vue 
+  - == JavaScript framework -- for -- building  UI
+It builds on top of standard HTML, CSS, and JavaScript and provides a declarative, component-based programming model that helps you efficiently develop user interfaces of any complexity.
 
 Here is a minimal example:
 
