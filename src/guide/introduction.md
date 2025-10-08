@@ -15,7 +15,13 @@ footer: false
 
 - Vue 
   - == JavaScript framework -- for -- building  UI
-It builds on top of standard HTML, CSS, and JavaScript and provides a declarative, component-based programming model that helps you efficiently develop user interfaces of any complexity.
+    - built | standard HTML, CSS, and JavaScript
+  - provides
+    - programming model
+      - declarative
+      - component-based 
+  - uses
+    - develop UI
 
 Here is a minimal example:
 
