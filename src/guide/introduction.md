@@ -22,6 +22,11 @@ footer: false
       - component-based 
   - uses
     - develop UI
+  - core features 
+    - declarative rendering
+      - extends HTML -- vía -- template syntax
+      - == describe HTML output -- based on -- JavaScript state
+    - reactivity
 
 Here is a minimal example:
 
@@ -79,7 +84,7 @@ const count = ref(0)
 
 The above example demonstrates the two core features of Vue:
 
-- **Declarative Rendering**: Vue extends standard HTML with a template syntax that allows us to declaratively describe HTML output based on JavaScript state.
+- **Declarative Rendering**:  that allows us to declaratively 
 
 - **Reactivity**: Vue automatically tracks JavaScript state changes and efficiently updates the DOM when changes happen.
 
