@@ -28,6 +28,7 @@ footer: false
       - == describe HTML output -- based on -- JavaScript state
     - reactivity
 
+
 Here is a minimal example:
 
 <div class="options-api">
@@ -84,7 +85,7 @@ const count = ref(0)
 
 The above example demonstrates the two core features of Vue:
 
-- **Declarative Rendering**:  that allows us to declaratively 
+- **Declarative Rendering**
 
 - **Reactivity**: Vue automatically tracks JavaScript state changes and efficiently updates the DOM when changes happen.
 
