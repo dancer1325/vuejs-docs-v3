@@ -222,7 +222,13 @@ export default {
 - component's logic is defined -- via -- imported API functions
 - uses
   - | SFCs,
-    - Composition API is used with [`<script setup>`](/api/sfc-script-setup). The `setup` attribute is a hint that makes Vue perform compile-time transforms that allow us to use Composition API with less boilerplate. For example, imports and top-level variables / functions declared in `<script setup>` are directly usable in the template.
+    - Composition API is used with [`<script setup>`](/api/sfc-script-setup)
+
+- `setup` attribute
+  - == hint / Vue performs compile-time transforms 
+  - allow us 
+    - use Composition API / less boilerplate
+ For example, imports and top-level variables / functions declared in `<script setup>` are directly usable in the template.
 
 Here is the same component, with the exact same template, but using Composition API and `<script setup>` instead:
 
