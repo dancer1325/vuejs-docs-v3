@@ -182,6 +182,10 @@ Vue components can be authored in two different API styles: **Options API** and 
   - Options' properties are exposed | `this` inside functions
     - == points -- to the -- component instance
 
+- "component instance"
+  - MAIN concept 
+  - == class-based model == OOP language
+
 ```vue
 <script>
 export default {
@@ -259,9 +263,13 @@ onMounted(() => {
 
 ### Which to Choose? {#which-to-choose}
 
-Both API styles are fully capable of covering common use cases. They are different interfaces powered by the exact same underlying system. In fact, the Options API is implemented on top of the Composition API! The fundamental concepts and knowledge about Vue are shared across the two styles.
+- Options API vs Composition API
+  - valid BOTH | common use cases
+  - DIFFERENT interfaces / powered -- by -- SAME underlying system
+  - 👀Options API is implemented | Composition API👀
+  - SAME fundamental concepts 
 
-The Options API is centered around the concept of a "component instance" (`this` as seen in the example), which typically aligns better with a class-based mental model for users coming from OOP language backgrounds. It is also more beginner-friendly by abstracting away the reactivity details and enforcing code organization via option groups.
+ It is also more beginner-friendly by abstracting away the reactivity details and enforcing code organization via option groups.
 
 The Composition API is centered around declaring reactive state variables directly in a function scope and composing state from multiple functions together to handle complexity. It is more free-form and requires an understanding of how reactivity works in Vue to be used effectively. In return, its flexibility enables more powerful patterns for organizing and reusing logic.
 
