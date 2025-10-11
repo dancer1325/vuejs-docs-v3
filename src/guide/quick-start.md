@@ -10,25 +10,36 @@ import { VTCodeGroup, VTCodeGroupTab } from '@vue/theme'
 
 ## Try Vue Online {#try-vue-online}
 
-- To quickly get a taste of Vue, you can try it directly in our [Playground](https://play.vuejs.org/#eNo9jcEKwjAMhl/lt5fpQYfXUQfefAMvvRQbddC1pUuHUPrudg4HIcmXjyRZXEM4zYlEJ+T0iEPgXjn6BB8Zhp46WUZWDjCa9f6w9kAkTtH9CRinV4fmRtZ63H20Ztesqiylphqy3R5UYBqD1UyVAPk+9zkvV1CKbCv9poMLiTEfR2/IXpSoXomqZLtti/IFwVtA9A==).
+- [Playground](https://play.vuejs.org/#eNo9jcEKwjAMhl/lt5fpQYfXUQfefAMvvRQbddC1pUuHUPrudg4HIcmXjyRZXEM4zYlEJ+T0iEPgXjn6BB8Zhp46WUZWDjCa9f6w9kAkTtH9CRinV4fmRtZ63H20Ztesqiylphqy3R5UYBqD1UyVAPk+9zkvV1CKbCv9poMLiTEfR2/IXpSoXomqZLtti/IFwVtA9A==).
 
-- If you prefer a plain HTML setup without any build steps, you can use this [JSFiddle](https://jsfiddle.net/yyx990803/2ke1ab0z/) as your starting point.
+-  [JSFiddle](https://jsfiddle.net/yyx990803/2ke1ab0z/)
+  - plain HTML setup WITHOUT build steps
 
-- If you are already familiar with Node.js and the concept of build tools, you can also try a complete build setup right within your browser on [StackBlitz](https://vite.new/vue).
+- [StackBlitz](https://vite.new/vue)
+  - requierements
+    - Node.js
+    - build tools
+  - complete build setup
 
-- To get a walkthrough of the recommended setup, watch this interactive [Scrimba](http://scrimba.com/links/vue-quickstart) tutorial that shows you how to run, edit, and deploy your first Vue app.
+- [Scrimba tutorial](http://scrimba.com/links/vue-quickstart) 
+  - goal
+    - recommended setup
+    - about Vue app, how to
+      - run
+      - edit
+      - deploy
 
 ## Creating a Vue Application {#creating-a-vue-application}
 
-:::tip Prerequisites
+- requierements
+  - [Node.js](https://nodejs.org/)  `^20.19.0 || >=22.12.0`
 
-- Familiarity with the command line
-- Install [Node.js](https://nodejs.org/) version `^20.19.0 || >=22.12.0`
-  :::
+- goal
+  - how to scaffold a Vue [Single Page Application](/guide/extras/ways-of-using-vue#single-page-application-spa) .   - build setup -- based on -- [Vite](https://vitejs.dev) 
+    - allow use 
+      - Vue [Single-File Components (SFCs)](/guide/scaling-up/sfc)
 
-In this section we will introduce how to scaffold a Vue [Single Page Application](/guide/extras/ways-of-using-vue#single-page-application-spa) on your local machine. The created project will be using a build setup based on [Vite](https://vitejs.dev) and allow us to use Vue [Single-File Components](/guide/scaling-up/sfc) (SFCs).
-
-Make sure you have an up-to-date version of [Node.js](https://nodejs.org/) installed and your current working directory is the one where you intend to create a project. Run the following command in your command line (without the `$` sign):
+. Run the following command in your command line (without the `$` sign):
 
 ::: code-group
 
