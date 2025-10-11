@@ -117,6 +117,7 @@ Despite the flexibility, the core knowledge about how Vue works is shared across
   - == component's logic (JS) + template (HTML) + styles (CSS)
   - allows
     - authoring Vue components
+      - == Vue will handle ALL the build tools setup -- for -- you
   - uses
     - | build-tool-enabled Vue projects
 
@@ -169,11 +170,12 @@ button {
 
 </div>
 
-SFC is a defining feature of Vue and is the recommended way to author Vue components **if** your use case warrants a build setup. You can learn more about the [how and why of SFC](/guide/scaling-up/sfc) in its dedicated section - but for now, just know that Vue will handle all the build tools setup for you.
+ 
 
 ## API Styles {#api-styles}
 
-Vue components can be authored in two different API styles: **Options API** and **Composition API**.
+- allows
+  - authoring Vue components
 
 ### Options API {#options-api}
 
@@ -221,6 +223,9 @@ export default {
 
 [Vue Playground](https://play.vuejs.org/#eNptkMFqxCAQhl9lkB522ZL0HNKlpa/Qo4e1ZpLIGhUdl5bgu9es2eSyIMio833zO7NP56pbRNawNkivHJ25wV9nPUGHvYiaYOYGoK7Bo5CkbgiBBOFy2AkSh2N5APmeojePCkDaaKiBt1KnZUuv3Ky0PppMsyYAjYJgigu0oEGYDsirYUAP0WULhqVrQhptF5qHQhnpcUJD+wyQaSpUd/Xp9NysVY/yT2qE0dprIS/vsds5Mg9mNVbaDofL94jZpUgJXUKBCvAy76ZUXY53CTd5tfX2k7kgnJzOCXIF0P5EImvgQ2olr++cbRE4O3+t6JxvXj0ptXVpye1tvbFY+ge/NJZt)
 
+- use cases
+  - NOT use build tools
+
 ### Composition API {#composition-api}
 
 - component's logic is defined -- via -- imported API functions
@@ -261,6 +266,11 @@ onMounted(() => {
 
 [Try it in the Playground](https://play.vuejs.org/#eNpNkMFqwzAQRH9lMYU4pNg9Bye09NxbjzrEVda2iLwS0spQjP69a+yYHnRYad7MaOfiw/tqSliciybqYDxDRE7+qsiM3gWGGQJ2r+DoyyVivEOGLrgRDkIdFCmqa1G0ms2EELllVKQdRQa9AHBZ+PLtuEm7RCKVd+ChZRjTQqwctHQHDqbvMUDyd7mKip4AGNIBRyQujzArgtW/mlqb8HRSlLcEazrUv9oiDM49xGGvXgp5uT5his5iZV1f3r4HFHvDprVbaxPhZf4XkKub/CDLaep1T7IhGRhHb6WoTADNT2KWpu/aGv24qGKvrIrr5+Z7hnneQnJu6hURvKl3ryL/ARrVkuI=)
 
+- [Composition API FAQ](/guide/extras/composition-api-faq)
+- use cases
+  - if you want to build full applications -> Composition API + Single-File Components
+  - low comolexity scenarios
+
 ### Which to Choose? {#which-to-choose}
 
 - Options API vs Composition API
@@ -273,39 +283,7 @@ onMounted(() => {
 
 The Composition API is centered around declaring reactive state variables directly in a function scope and composing state from multiple functions together to handle complexity. It is more free-form and requires an understanding of how reactivity works in Vue to be used effectively. In return, its flexibility enables more powerful patterns for organizing and reusing logic.
 
-You can learn more about the comparison between the two styles and the potential benefits of Composition API in the [Composition API FAQ](/guide/extras/composition-api-faq).
-
-If you are new to Vue, here's our general recommendation:
-
-- For learning purposes, go with the style that looks easier to understand to you. Again, most of the core concepts are shared between the two styles. You can always pick up the other style later.
-
-- For production use:
-
-  - Go with Options API if you are not using build tools, or plan to use Vue primarily in low-complexity scenarios, e.g. progressive enhancement.
-
-  - Go with Composition API + Single-File Components if you plan to build full applications with Vue.
-
-You don't have to commit to only one style during the learning phase. The rest of the documentation will provide code samples in both styles where applicable, and you can toggle between them at any time using the **API Preference switches** at the top of the left sidebar.
 
 ## Still Got Questions? {#still-got-questions}
 
-Check out our [FAQ](/about/faq).
-
-## Pick Your Learning Path {#pick-your-learning-path}
-
-Different developers have different learning styles. Feel free to pick a learning path that suits your preference - although we do recommend going over all of the content, if possible!
-
-<div class="vt-box-container next-steps">
-  <a class="vt-box" href="/tutorial/">
-    <p class="next-steps-link">Try the Tutorial</p>
-    <p class="next-steps-caption">For those who prefer learning things hands-on.</p>
-  </a>
-  <a class="vt-box" href="/guide/quick-start.html">
-    <p class="next-steps-link">Read the Guide</p>
-    <p class="next-steps-caption">The guide walks you through every aspect of the framework in full detail.</p>
-  </a>
-  <a class="vt-box" href="/examples/">
-    <p class="next-steps-link">Check out the Examples</p>
-    <p class="next-steps-caption">Explore examples of core features and common UI tasks.</p>
-  </a>
-</div>
+- [FAQ](/about/faq)
