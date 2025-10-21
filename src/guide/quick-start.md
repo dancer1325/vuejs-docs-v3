@@ -8,7 +8,7 @@ import { VTCodeGroup, VTCodeGroupTab } from '@vue/theme'
 
 # Quick Start {#quick-start}
 
-## Try Vue Online {#try-vue-online}
+## Online {#try-vue-online}
 
 - [Playground](https://play.vuejs.org/#eNo9jcEKwjAMhl/lt5fpQYfXUQfefAMvvRQbddC1pUuHUPrudg4HIcmXjyRZXEM4zYlEJ+T0iEPgXjn6BB8Zhp46WUZWDjCa9f6w9kAkTtH9CRinV4fmRtZ63H20Ztesqiylphqy3R5UYBqD1UyVAPk+9zkvV1CKbCv9poMLiTEfR2/IXpSoXomqZLtti/IFwVtA9A==).
 
@@ -31,136 +31,49 @@ import { VTCodeGroup, VTCodeGroupTab } from '@vue/theme'
 
 ## Creating a Vue Application {#creating-a-vue-application}
 
+- goal
+  - how to scaffold a Vue [Single Page Application](/guide/extras/ways-of-using-vue#single-page-application-spa)
+    - 👀-- via -- [create-vue](https://github.com/vuejs/create-vue)👀
+    - build setup -- based on -- [Vite](https://vitejs.dev)
+    - allow use
+      - Vue [Single-File Components (SFCs)](/guide/scaling-up/sfc)
+    - components written -- vía -- [Composition API](/guide/introduction#composition-api) + `<script setup>`
+  - Vue´s core features
+    - **Declarative Rendering**
+    - **Reactivity**
+
 - requierements
   - [Node.js](https://nodejs.org/)  `^20.19.0 || >=22.12.0`
-
-- goal
-  - how to scaffold a Vue [Single Page Application](/guide/extras/ways-of-using-vue#single-page-application-spa) .   - build setup -- based on -- [Vite](https://vitejs.dev) 
-    - allow use 
-      - Vue [Single-File Components (SFCs)](/guide/scaling-up/sfc)
 
 - [create-vue](https://github.com/vuejs/create-vue)
   - Vue project scaffolding tool
   - steps
 
-::: code-group
+* [Example](examples/quickStart/vue-project)
 
-```sh [npm]
-$ npm create vue@latest
-```
+## Using Vue -- from -- CDN {#using-vue-from-cdn}
 
-```sh [pnpm]
-$ pnpm create vue@latest
-```
+* -- via -- CDN / serves npm packages
+  * [unpkg](https://unpkg.com/) 
+    ```html
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    ```
+  * [jsdelivr](https://www.jsdelivr.com/package/npm/vue) 
+  * [cdnjs](https://cdnjs.com/libraries/vue)
 
-```sh [yarn]
-# For Yarn (v1+)
-$ yarn create vue
-
-# For Yarn Modern (v2+)
-$ yarn create vue@latest
-  
-# For Yarn ^v4.11
-$ yarn dlx create-vue@latest
-```
-
-```sh [bun]
-$ bun create vue@latest
-```
-:::
-
-
- You will be presented with prompts for several optional features such as TypeScript and testing support:
-
-<div class="language-sh"><pre><code><span style="color:var(--vt-c-green);">✔</span> <span style="color:#A6ACCD;">Project name: <span style="color:#888;">… <span style="color:#89DDFF;">&lt;</span><span style="color:#888;">your-project-name</span><span style="color:#89DDFF;">&gt;</span></span></span>
-<span style="color:var(--vt-c-green);">✔</span> <span style="color:#A6ACCD;">Add TypeScript? <span style="color:#888;">… <span style="color:#89DDFF;text-decoration:underline">No</span> / Yes</span></span>
-<span style="color:var(--vt-c-green);">✔</span> <span style="color:#A6ACCD;">Add JSX Support? <span style="color:#888;">… <span style="color:#89DDFF;text-decoration:underline">No</span> / Yes</span></span>
-<span style="color:var(--vt-c-green);">✔</span> <span style="color:#A6ACCD;">Add Vue Router for Single Page Application development? <span style="color:#888;">… <span style="color:#89DDFF;text-decoration:underline">No</span> / Yes</span></span>
-<span style="color:var(--vt-c-green);">✔</span> <span style="color:#A6ACCD;">Add Pinia for state management? <span style="color:#888;">… <span style="color:#89DDFF;text-decoration:underline">No</span> / Yes</span></span>
-<span style="color:var(--vt-c-green);">✔</span> <span style="color:#A6ACCD;">Add Vitest for Unit testing? <span style="color:#888;">… <span style="color:#89DDFF;text-decoration:underline">No</span> / Yes</span></span>
-<span style="color:var(--vt-c-green);">✔</span> <span style="color:#A6ACCD;">Add an End-to-End Testing Solution? <span style="color:#888;">… <span style="color:#89DDFF;text-decoration:underline">No</span> / Cypress / Nightwatch / Playwright</span></span>
-<span style="color:var(--vt-c-green);">✔</span> <span style="color:#A6ACCD;">Add ESLint for code quality? <span style="color:#888;">… No / <span style="color:#89DDFF;text-decoration:underline">Yes</span></span></span>
-<span style="color:var(--vt-c-green);">✔</span> <span style="color:#A6ACCD;">Add Prettier for code formatting? <span style="color:#888;">… <span style="color:#89DDFF;text-decoration:underline">No</span> / Yes</span></span>
-<span style="color:var(--vt-c-green);">✔</span> <span style="color:#A6ACCD;">Add Vue DevTools 7 extension for debugging? (experimental) <span style="color:#888;">… <span style="color:#89DDFF;text-decoration:underline">No</span> / Yes</span></span>
-<span></span>
-<span style="color:#A6ACCD;">Scaffolding project in ./<span style="color:#89DDFF;">&lt;</span><span style="color:#888;">your-project-name</span><span style="color:#89DDFF;">&gt;</span>...</span>
-<span style="color:#A6ACCD;">Done.</span></code></pre></div>
-
-follow the instructions to install dependencies and start the dev server:
-
-::: code-group
-
-```sh-vue [npm]
-$ cd {{'<your-project-name>'}}
-$ npm install
-$ npm run dev
-```
-
-```sh-vue [pnpm]
-$ cd {{'<your-project-name>'}}
-$ pnpm install
-$ pnpm run dev
-```
-
-```sh-vue [yarn]
-$ cd {{'<your-project-name>'}}
-$ yarn
-$ yarn dev
-```
-
-```sh-vue [bun]
-$ cd {{'<your-project-name>'}}
-$ bun install
-$ bun run dev
-```
-
-:::
-
-
-  - example components are written -- vía -- [Composition API](/guide/introduction#composition-api) & `<script setup>`
-
-- if you want to ship your app to production
-
-::: code-group
-
-```sh [npm]
-$ npm run build
-```
-
-```sh [pnpm]
-$ pnpm run build
-```
-
-```sh [yarn]
-$ yarn build
-```
-
-```sh [bun]
-$ bun run build
-```
-
-:::
-
-
-  - create a production-ready build of your app | project's `./dist`
-
-[Next Steps >](#next-steps)
-
-## Using Vue from CDN {#using-vue-from-cdn}
-
-You can use Vue directly from a CDN via a script tag:
-
-```html
-<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-```
-
-Here we are using [unpkg](https://unpkg.com/), but you can also use any CDN that serves npm packages, for example [jsdelivr](https://www.jsdelivr.com/package/npm/vue) or [cdnjs](https://cdnjs.com/libraries/vue). Of course, you can also download this file and serve it yourself.
-
-When using Vue from a CDN, there is no "build step" involved. This makes the setup a lot simpler, and is suitable for enhancing static HTML or integrating with a backend framework. However, you won't be able to use the Single-File Component (SFC) syntax.
+* pros
+  * ❌NO requires "build step"❌
+    * -> simpler setup
+* cons
+  * ❌NOT possible to use the Single-File Component (SFC)❌ 
+* use cases
+  * enhance static HTML
+  * integrate with a backend framework
 
 ### Using the Global Build {#using-the-global-build}
 
-The above link loads the _global build_ of Vue, where all top-level APIs are exposed as properties on the global `Vue` object. Here is a full example using the global build:
+The above link loads the _global build_ of Vue, where all top-level APIs are exposed as properties on the global `Vue` object
+* Here is a full example using the global build:
 
 <div class="options-api">
 
@@ -210,14 +123,16 @@ The above link loads the _global build_ of Vue, where all top-level APIs are exp
 [CodePen Demo >](https://codepen.io/vuejs-examples/pen/eYQpQEG)
 
 :::tip
-Many of the examples for Composition API throughout the guide will be using the `<script setup>` syntax, which requires build tools. If you intend to use Composition API without a build step, consult the usage of the [`setup()` option](/api/composition-api-setup).
+Many of the examples for Composition API throughout the guide will be using the `<script setup>` syntax, which requires build tools
+* If you intend to use Composition API without a build step, consult the usage of the [`setup()` option](/api/composition-api-setup).
 :::
 
 </div>
 
 ### Using the ES Module Build {#using-the-es-module-build}
 
-Throughout the rest of the documentation, we will be primarily using [ES modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) syntax. Most modern browsers now support ES modules natively, so we can use Vue from a CDN via native ES modules like this:
+Throughout the rest of the documentation, we will be primarily using [ES modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) syntax
+* Most modern browsers now support ES modules natively, so we can use Vue from a CDN via native ES modules like this:
 
 <div class="options-api">
 
@@ -347,7 +262,9 @@ We can teach the browser where to locate the `vue` import by using [Import Maps]
 You can also add entries for other dependencies to the import map - but make sure they point to the ES modules version of the library you intend to use.
 
 :::tip Import Maps Browser Support
-Import Maps is a relatively new browser feature. Make sure to use a browser within its [support range](https://caniuse.com/import-maps). In particular, it is only supported in Safari 16.4+.
+Import Maps is a relatively new browser feature
+* Make sure to use a browser within its [support range](https://caniuse.com/import-maps)
+* In particular, it is only supported in Safari 16.4+.
 :::
 
 :::warning Notes on Production Use
@@ -358,7 +275,8 @@ While it is possible to use Vue without a build system, an alternative approach 
 
 ### Splitting Up the Modules {#splitting-up-the-modules}
 
-As we dive deeper into the guide, we may need to split our code into separate JavaScript files so that they are easier to manage. For example:
+As we dive deeper into the guide, we may need to split our code into separate JavaScript files so that they are easier to manage
+* For example:
 
 ```html [index.html]
 <div id="app"></div>

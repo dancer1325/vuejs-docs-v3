@@ -3,8 +3,5 @@ page: true
 title: Vue.js - The Progressive JavaScript Framework
 ---
 
-<script setup>
-import Home from '@theme/components/Home.vue'
-</script>
 
-<Home />
+* [Home.md](/vuejs-docs-v3/.vitepress/theme/components/Home.md)
