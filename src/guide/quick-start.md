@@ -10,7 +10,7 @@ import { VTCodeGroup, VTCodeGroupTab } from '@vue/theme'
 
 ## Online {#try-vue-online}
 
-- [Playground](https://play.vuejs.org/#eNo9jcEKwjAMhl/lt5fpQYfXUQfefAMvvRQbddC1pUuHUPrudg4HIcmXjyRZXEM4zYlEJ+T0iEPgXjn6BB8Zhp46WUZWDjCa9f6w9kAkTtH9CRinV4fmRtZ63H20Ztesqiylphqy3R5UYBqD1UyVAPk+9zkvV1CKbCv9poMLiTEfR2/IXpSoXomqZLtti/IFwVtA9A==).
+- [Playground](https://play.vuejs.org/#eNo9jcEKwjAMhl/lt5fpQYfXUQfefAMvvRQbddC1pUuHUPrudg4HIcmXjyRZXEM4zYlEJ+T0iEPgXjn6BB8Zhp46WUZWDjCa9f6w9kAkTtH9CRinV4fmRtZ63H20Ztesqiylphqy3R5UYBqD1UyVAPk+9zkvV1CKbCv9poMLiTEfR2/IXpSoXomqZLtti/IFwVtA9A==)
 
 -  [JSFiddle](https://jsfiddle.net/yyx990803/2ke1ab0z/)
   - plain HTML setup WITHOUT build steps
@@ -32,17 +32,17 @@ import { VTCodeGroup, VTCodeGroupTab } from '@vue/theme'
 ## Creating a Vue Application {#creating-a-vue-application}
 
 - goal
-  - how to scaffold a Vue [Single Page Application](/guide/extras/ways-of-using-vue#single-page-application-spa)
+  - how to scaffold a Vue [Single Page Application](extras/ways-of-using-vue.md#single-page-application-spa-single-page-application-spa)
     - 👀-- via -- [create-vue](https://github.com/vuejs/create-vue)👀
     - build setup -- based on -- [Vite](https://vitejs.dev)
     - allow use
-      - Vue [Single-File Components (SFCs)](/guide/scaling-up/sfc)
+      - Vue [Single-File Components (SFCs)](scaling-up/sfc)
     - components written -- vía -- [Composition API](/guide/introduction#composition-api) + `<script setup>`
   - Vue´s core features
     - **Declarative Rendering**
     - **Reactivity**
 
-- requierements
+- requirements
   - [Node.js](https://nodejs.org/)  `^20.19.0 || >=22.12.0`
 
 - [create-vue](https://github.com/vuejs/create-vue)
