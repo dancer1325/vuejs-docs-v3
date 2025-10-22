@@ -23,18 +23,16 @@
   - Author modularized components
   - [couple concerns](#what-about-separation-of-concerns-what-about-separation-of-concerns)
   - Pre-compiled templates WITHOUT runtime compilation cost
-  - [Component-scoped CSS](/api/sfc-css-features)
-  - [More ergonomic syntax when working with Composition API](/api/sfc-script-setup)
-  - More compile-time optimizations by cross-analyzing template and script
-  - [IDE support](/guide/scaling-up/tooling#ide-support) with auto-completion and type-checking for template expressions
-  - Out-of-the-box Hot-Module Replacement (HMR) support
+  - [Component-scoped CSS](../../api/sfc-css-features)
+  - [| work with Composition API, MORE ergonomic syntax](../../api/sfc-script-setup)
+  - MORE compile-time optimizations -- by -- cross-analyzing template & script
+  - [IDE support](../../guide/scaling-up/tooling.md#ide-support-ide-support)
+  - Hot-Module Replacement (HMR) support
 
-* TODO:
-SFC is a defining feature of Vue as a framework, and is the recommended approach for using Vue in the following scenarios:
-
-- Single-Page Applications (SPA)
-- Static Site Generation (SSG)
-- Any non-trivial frontend where a build step can be justified for better development experience (DX).
+* use cases
+  - Single-Page Applications (SPA)
+  - Static Site Generation (SSG)
+  - Any non-trivial frontend where a build step can be justified for better development experience (DX).
 
 That said, we do realize there are scenarios where SFCs can feel like overkill
 * This is why Vue can still be used via plain JavaScript without a build step

@@ -44,3 +44,13 @@ npm run build
     * _Example:_ ALL about hello | [HelloWorld.vue](src/components/HelloWorld.vue) 
 * Pre-compiled templates WITHOUT runtime compilation cost
   * TODO: how to identify it?
+* Component-scoped CSS
+  * TODO:
+* | work with Composition API, MORE ergonomic syntax
+  * TODO:
+* MORE compile-time optimizations -- by -- cross-analyzing template & script
+  * TODO:
+* IDE support
+  * TODO:
+* Hot-Module Replacement (HMR) support
+  * TODO:
