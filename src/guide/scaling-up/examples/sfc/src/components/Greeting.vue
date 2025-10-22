@@ -7,9 +7,11 @@ const greeting = ref('Hello World!')
   <p class="greeting">{{ greeting }}</p>
 </template>
 
-<style>
+<!-- scoped       -- Reason: check CSS scoped -->
+<style scoped>
 .greeting {
-  color: red;
+  color: green;
   font-weight: bold;
+  border: 2px solid orange;
 }
 </style>

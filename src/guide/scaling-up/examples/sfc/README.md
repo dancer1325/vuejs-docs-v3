@@ -37,20 +37,47 @@ npm run dev
 npm run build
 ```
 
-## Notes
-* Define SFC | [components/](src/components/)
-  * == author modularized components
-  * couple concerns
-    * _Example:_ ALL about hello | [HelloWorld.vue](src/components/HelloWorld.vue) 
-* Pre-compiled templates WITHOUT runtime compilation cost
-  * TODO: how to identify it?
-* Component-scoped CSS
+## SFC cons
+### require a build step
+* [here](#compile-and-hot-reload-for-development)
+
+## SFC pros
+### Define SFC | [components/](src/components/)
+* == author modularized components
+### couple concerns
+* _Example:_ ALL about hello | [HelloWorld.vue](src/components/HelloWorld.vue) 
+### Pre-compiled templates WITHOUT runtime compilation cost
+* check `VueComponents.render`
+### Component-scoped CSS
+* | `npm run dev`
+  * http://localhost:5173/ 's F12's element
+    * gets unique `data-v-xxxxx` attributes
+### | work with Composition API, MORE ergonomic syntax
+* TODO:
+### MORE compile-time optimizations -- by -- cross-analyzing template & script
   * TODO:
-* | work with Composition API, MORE ergonomic syntax
+### IDE support
   * TODO:
-* MORE compile-time optimizations -- by -- cross-analyzing template & script
-  * TODO:
-* IDE support
-  * TODO:
-* Hot-Module Replacement (HMR) support
-  * TODO:
+### Hot-Module Replacement (HMR) support
+* modify ANY file & check the hot reload
+
+
+## How It Works
+### compiled SFC == standard JavaScript (ES) module
+* | `npm run dev`
+  * http://localhost:5173/ > F12 > sources
+    * MULTIPLE files / EACH .vue /
+      * regular JavaScript syntax
+### `<style>` tags
+#### | SFCs, injected -- as -- native `<style>` tags | development
+* | `npm run dev`
+  * http://localhost:5173/ > F12 > elements
+    * find the Vue's `<style>`
+      * _Example:_ `border: 2px solid orange;`, `border: 2px solid blue;`
+#### | production, merge | 1! CSS file
+* `npm run build` 
+* "dist/assets"
+  * ONLY find 1! `.css` file
+### uses, integrate the SFC compiler -- with a -- build tool
+* here
+  * created -- via -- create-vue

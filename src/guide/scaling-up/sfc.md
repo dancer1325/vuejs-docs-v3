@@ -22,7 +22,8 @@
 * pros
   - Author modularized components
   - [couple concerns](#what-about-separation-of-concerns-what-about-separation-of-concerns)
-  - Pre-compiled templates WITHOUT runtime compilation cost
+  - Pre-compiled templates 
+    - WITHOUT runtime compilation cost
   - [Component-scoped CSS](../../api/sfc-css-features)
   - [| work with Composition API, MORE ergonomic syntax](../../api/sfc-script-setup)
   - MORE compile-time optimizations -- by -- cross-analyzing template & script
@@ -31,13 +32,14 @@
 
 * use cases
   - Single-Page Applications (SPA)
+    - _Example:_ [here](examples/sfc)
   - Static Site Generation (SSG)
-  - Any non-trivial frontend where a build step can be justified for better development experience (DX).
+    - _Example:_ TODO:
+  - NON-trivial frontend | build step can be justified -- for -- better development experience (DX)
 
-That said, we do realize there are scenarios where SFCs can feel like overkill
-* This is why Vue can still be used via plain JavaScript without a build step
-* If you are just looking for enhancing largely static HTML with light interactions, you can also check out [petite-vue](https://github.com/vuejs/petite-vue), 
-a 6 kB subset of Vue optimized for progressive enhancement.
+* ❌NOT use cases❌
+  * simple scenarios
+    * -> use [petite-vue](https://github.com/vuejs/petite-vue) 
 
 ## How It Works {#how-it-works}
 
@@ -47,16 +49,17 @@ a 6 kB subset of Vue optimized for progressive enhancement.
 
 * `<style>` tags
   * | SFCs,
-    * are injected -- as -- native `<style>` tags | development 
+    * 💡are injected -- as -- native `<style>` tags | development💡 
       * Reason:🧠support hot updates🧠
   * | production,
-    * you can extract and merge | 1! CSS file
+    * 👀merge | 1! CSS file👀
 
 * [Vue SFC Playground](https://play.vuejs.org/)
 
 * uses
   * integrate the SFC compiler -- with a -- build tool (_Examples:_ [Vite](https://vitejs.dev/) or [Vue CLI](http://cli.vuejs.org/))
     * [create-vue](https://github.com/vuejs/create-vue) as scaffolding tool
+
 * [SFC Tooling](tooling)
 
 ## What About Separation of Concerns? {#what-about-separation-of-concerns}
