@@ -2,8 +2,12 @@
 
 ## Who maintains Vue? {#who-maintains-vue}
 
-Vue is an independent, community-driven project. It was created by [Evan You](https://twitter.com/youyuxi) in 2014 as a personal side project. Today, Vue is actively maintained by [a team of both full-time and volunteer members from all around the world](/about/team), where Evan serves as the project lead. You can learn more about the story of Vue in this [documentary](https://www.youtube.com/watch?v=OrxmtDw4pVI).
-
+Vue is an independent, community-driven project - | 2014, created by [Evan You](https://twitter.com/youyuxi)
+- currently,
+  - maintained by [full-time + volunteer members](/about/team)
+  - Evan is the project lead
+- [origins](https://www.youtube.com/watch?v=OrxmtDw4pVI)
+- |
 Vue's development is primarily funded through sponsorships and we have been financially sustainable since 2016. If you or your business benefit from Vue, consider [sponsoring us](/sponsor/) to support Vue's development!
 
 ## What's the difference between Vue 2 and Vue 3? {#what-s-the-difference-between-vue-2-and-vue-3}
