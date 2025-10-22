@@ -81,3 +81,7 @@ npm run build
 ### uses, integrate the SFC compiler -- with a -- build tool
 * here
   * created -- via -- create-vue
+
+## What About Separation of Concerns?
+### separation of concerns != separation of file types
+* [components](src/components)
