@@ -67,22 +67,30 @@ For information on migrating from Vue CLI to Vite:
 
 ### Note on In-Browser Template Compilation {#note-on-in-browser-template-compilation}
 
-When using Vue without a build step, component templates are written either directly in the page's HTML or as inlined JavaScript strings. In such cases, Vue needs to ship the template compiler to the browser in order to perform on-the-fly template compilation. On the other hand, the compiler would be unnecessary if we pre-compile the templates with a build step. To reduce client bundle size, Vue provides [different "builds"](https://unpkg.com/browse/vue@3/dist/) optimized for different use cases.
+When using Vue without a build step, component templates are written either directly in the page's HTML or as inlined JavaScript strings
+* In such cases, Vue needs to ship the template compiler to the browser in order to perform on-the-fly template compilation
+* On the other hand, the compiler would be unnecessary if we pre-compile the templates with a build step
+* To reduce client bundle size, Vue provides [different "builds"](https://unpkg.com/browse/vue@3/dist/) optimized for different use cases.
 
-- Build files that start with `vue.runtime.*` are **runtime-only builds**: they do not include the compiler. When using these builds, all templates must be pre-compiled via a build step.
+- Build files that start with `vue.runtime.*` are **runtime-only builds**: they do not include the compiler
+* When using these builds, all templates must be pre-compiled via a build step.
 
-- Build files that do not include `.runtime` are **full builds**: they include the compiler and support compiling templates directly in the browser. However, they will increase the payload by ~14kb.
+- Build files that do not include `.runtime` are **full builds**: they include the compiler and support compiling templates directly in the browser
+* However, they will increase the payload by ~14kb.
 
-Our default tooling setups use the runtime-only build since all templates in SFCs are pre-compiled. If, for some reason, you need in-browser template compilation even with a build step, you can do so by configuring the build tool to alias `vue` to `vue/dist/vue.esm-bundler.js` instead.
+Our default tooling setups use the runtime-only build since all templates in SFCs are pre-compiled
+* If, for some reason, you need in-browser template compilation even with a build step, you can do so by configuring the build tool to alias `vue` to `vue/dist/vue.esm-bundler.js` instead.
 
 If you are looking for a lighter-weight alternative for no-build-step usage, check out [petite-vue](https://github.com/vuejs/petite-vue).
 
 ## IDE Support {#ide-support}
 
-- The recommended IDE setup is [VS Code](https://code.visualstudio.com/) + the [Vue - Official extension](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (previously Volar). The extension provides syntax highlighting, TypeScript support, and intellisense for template expressions and component props.
+- The recommended IDE setup is [VS Code](https://code.visualstudio.com/) + the [Vue - Official extension](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (previously Volar)
+* The extension provides syntax highlighting, TypeScript support, and intellisense for template expressions and component props.
 
   :::tip
-  Vue - Official replaces [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur), our previous official VS Code extension for Vue 2. If you have Vetur currently installed, make sure to disable it in Vue 3 projects.
+  Vue - Official replaces [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur), our previous official VS Code extension for Vue 2
+* If you have Vetur currently installed, make sure to disable it in Vue 3 projects.
   :::
 
 - [WebStorm](https://www.jetbrains.com/webstorm/) also provides great built-in support for Vue SFCs.
@@ -118,7 +126,8 @@ Main article: [Using Vue with TypeScript](/guide/typescript/overview).
 
 Main article: [Testing Guide](/guide/scaling-up/testing).
 
-- [Cypress](https://www.cypress.io/) is recommended for E2E tests. It can also be used for component testing for Vue SFCs via the [Cypress Component Test Runner](https://docs.cypress.io/guides/component-testing/introduction).
+- [Cypress](https://www.cypress.io/) is recommended for E2E tests
+* It can also be used for component testing for Vue SFCs via the [Cypress Component Test Runner](https://docs.cypress.io/guides/component-testing/introduction).
 
 - [Vitest](https://vitest.dev/) is a test runner created by Vue / Vite team members that focuses on speed. It is specifically designed for Vite-based applications to provide the same instant feedback loop for unit / component testing.
 

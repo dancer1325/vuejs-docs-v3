@@ -11,8 +11,6 @@ footer: false
   - [EOL](https://v2.vuejs.org/eol/).
   - [Migration Guide v2 - v3](https://v3-migration.vuejs.org/)
 
-## The Progressive Framework {#the-progressive-framework}
-
 - Vue
   - 's goal
     - flexible
@@ -26,9 +24,17 @@ footer: false
     - Jamstack / Static Site Generation (SSG)
     - Targeting desktop, mobile, WebGL, and even the terminal
 
-Despite the flexibility, the core knowledge about how Vue works is shared across all these use cases. Even if you are just a beginner now, the knowledge gained along the way will stay useful as you grow to tackle more ambitious goals in the future. If you are a veteran, you can pick the optimal way to leverage Vue based on the problems you are trying to solve, while retaining the same productivity. This is why we call Vue "The Progressive Framework": it's a framework that can grow with you and adapt to your needs.
+Despite the flexibility, the core knowledge about how Vue works is shared across all these use cases
+Even if you are just a beginner now, the knowledge gained along the way will stay useful as you grow to tackle more ambitious goals in the future
+* If you are a veteran, you can pick the optimal way to leverage Vue based on the problems you are trying to solve, 
+while retaining the same productivity
+* This is why we call Vue "The Progressive Framework":
+it's a framework that can grow with you and adapt to your needs.
 
-## Single-File Components {#single-file-components}
+## Modes
+### HTML-mode
+
+### Single-File Components {#single-file-components}
 
 - **Single-File Component** (**SFC**) OR `*.vue` files
   - == HTML-like file format
@@ -199,7 +205,10 @@ onMounted(() => {
 
  It is also more beginner-friendly by abstracting away the reactivity details and enforcing code organization via option groups.
 
-The Composition API is centered around declaring reactive state variables directly in a function scope and composing state from multiple functions together to handle complexity. It is more free-form and requires an understanding of how reactivity works in Vue to be used effectively. In return, its flexibility enables more powerful patterns for organizing and reusing logic.
+The Composition API is centered around declaring reactive state variables directly in a function scope and 
+composing state from multiple functions together to handle complexity
+* It is more free-form and requires an understanding of how reactivity works in Vue to be used effectively
+* In return, its flexibility enables more powerful patterns for organizing and reusing logic.
 
 
 ## Still Got Questions? {#still-got-questions}

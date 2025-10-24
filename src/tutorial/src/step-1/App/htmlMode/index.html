@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vue App</title>
+</head>
+<body>
+    <div id="app">
+        <h1>Hello World!</h1>
+    </div>
+
+    <!-- 1. via CDN-->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        const { createApp } = Vue
+
+        createApp({}).mount('#app')
+    </script>
+
+    <!-- 2. via HTML-mode-->
+    <!-- TODO: fix how to get the import-->
+<!--    <script type="module">
+      import { createApp } from 'vue/dist/vue.esm-bundler.js'
+
+      createApp({
+        data() {
+          return { message: 'Hello' }
+        }
+      }).mount('#app')
+    </script>-->
+</body>
+</html>
