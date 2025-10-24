@@ -2,10 +2,6 @@
 footer: false
 ---
 
-<script setup>
-import { VTCodeGroup, VTCodeGroupTab } from '@vue/theme'
-</script>
-
 # Quick Start {#quick-start}
 
 ## Online {#try-vue-online}
@@ -336,9 +332,5 @@ If you skipped the [Introduction](/guide/introduction), we strongly recommend re
   <a class="vt-box" href="/tutorial/">
     <p class="next-steps-link">Try the Tutorial</p>
     <p class="next-steps-caption">For those who prefer learning things hands-on.</p>
-  </a>
-  <a class="vt-box" href="/examples/">
-    <p class="next-steps-link">Check out the Examples</p>
-    <p class="next-steps-caption">Explore examples of core features and common UI tasks.</p>
   </a>
 </div>

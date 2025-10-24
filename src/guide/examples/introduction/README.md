@@ -4,7 +4,14 @@
     - **Reactivity**
 
 # how has it been created?
-* TODO:
+* MANUALLY
+* use Vue CDN
 
 # how to run locally?
-* TODO:
+* open [index.html](index.html) | browser
+
+# use cases
+## enhancing static HTML WITHOUT a build step
+* ONLY [index.html](index.html)
+## Single-Page Application (SPA)
+* [here](../quickStart/vue-project)

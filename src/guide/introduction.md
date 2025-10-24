@@ -17,16 +17,14 @@ footer: false
   - 's goal
     - flexible
     - incrementally adoptable
-    - Reason: 🧠 web is extremely diverse & vary drasticall🧠
+      - Reason: 🧠 web is extremely diverse & vary drastically🧠
   - use cases 
-    - Enhancing static HTML without a build step
-    - Embedding as Web Components on any page
+    - enhancing static HTML WITHOUT a build step
+    - [Embedding as Web Components | any page](/vuejs-docs-v3/src/guide/extras/web-components.md)
     - Single-Page Application (SPA)
     - Fullstack / Server-Side Rendering (SSR)
     - Jamstack / Static Site Generation (SSG)
     - Targeting desktop, mobile, WebGL, and even the terminal
-
-
 
 Despite the flexibility, the core knowledge about how Vue works is shared across all these use cases. Even if you are just a beginner now, the knowledge gained along the way will stay useful as you grow to tackle more ambitious goals in the future. If you are a veteran, you can pick the optimal way to leverage Vue based on the problems you are trying to solve, while retaining the same productivity. This is why we call Vue "The Progressive Framework": it's a framework that can grow with you and adapt to your needs.
 
