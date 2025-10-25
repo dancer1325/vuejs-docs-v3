@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue Template W3C Validation Test</title>
+</head>
+<body>
+    <div id="app">
+      <!-- 1. valid template syntax -->
+      <h1>{{ title }}</h1>
+      <p>Contador: {{ count }}</p>
+      <span>{{ message }}</span>
+
+      <!-- 2. NOT valid attributes -->
+      <button v-on:click="increment">Click</button>
+      <div v-if="showContent">Content</div>
+      <input v-model="inputValue">
+
+      <!-- 3. NOT valid shorthand -->
+      <button @click="increment">Click</button>
+      <div :class="dynamicClass">Styled</div>
+    </div>
+</body>
+</html>

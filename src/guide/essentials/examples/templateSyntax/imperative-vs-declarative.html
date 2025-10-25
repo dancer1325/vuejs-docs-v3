@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Imperative vs Declarative Comparison</title>
+</head>
+<body>
+    <h2>Imperative Approach (Vanilla JS)</h2>
+    <div id="imperative">
+        <p id="counter">Count: 0</p>
+        <button id="btn1">Increment</button>
+    </div>
+
+    <h2>Declarative Approach (Vue)</h2>
+    <div id="declarative">
+        <p>Count: {{ count }}</p>
+        <button @click="count++">Increment</button>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        // IMPERATIVE: You tell HOW to update DOM
+        let count1 = 0
+        const counter = document.getElementById('counter')
+        const btn1 = document.getElementById('btn1')
+
+        btn1.addEventListener('click', () => {
+            count1++                                    // 1. Update data
+            counter.textContent = `Count: ${count1}`    // 2.⚠️MANUALLY update DOM⚠️
+            console.log('Imperative: Manual DOM update required')
+        })
+
+        // DECLARATIVE: You describe WHAT DOM should look like
+        const { createApp } = Vue
+
+        createApp({
+            data() {
+                return {
+                    count: 0
+                }
+            },
+            watch: {
+                count(newVal) {
+                    console.log('Declarative: DOM automatically updated to', newVal)
+                }
+            }
+        }).mount('#declarative')
+
+        console.log('🎯 KEY DIFFERENCE:')
+        console.log('Imperative: count++ → manually update DOM')
+        console.log('Declarative: count++ → Vue automatically updates DOM')
+    </script>
+</body>
+</html>

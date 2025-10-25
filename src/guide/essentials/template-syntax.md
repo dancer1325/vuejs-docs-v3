@@ -1,28 +1,44 @@
 # Template Syntax {#template-syntax}
 
-<ScrimbaLink href="https://scrimba.com/links/vue-template-syntax" title="Free Vue.js Template Syntax Lesson" type="scrimba">
-  Watch an interactive video lesson on Scrimba
-</ScrimbaLink>
+* [Scrimba video](https://scrimba.com/links/vue-template-syntax)
 
-Vue uses an HTML-based template syntax that allows you to declaratively bind the rendered DOM to the underlying component instance's data. All Vue templates are syntactically valid HTML that can be parsed by spec-compliant browsers and HTML parsers.
-
-Under the hood, Vue compiles the templates into highly-optimized JavaScript code. Combined with the reactivity system, Vue can intelligently figure out the minimal number of components to re-render and apply the minimal amount of DOM manipulations when the app state changes.
-
-If you are familiar with Virtual DOM concepts and prefer the raw power of JavaScript, you can also [directly write render functions](/guide/extras/render-function) instead of templates, with optional JSX support. However, do note that they do not enjoy the same level of compile-time optimizations as templates.
+* Vue's HTML-based template
+  * == HTML / 
+    * 👀can be parsed -- by -- spec-compliant browsers & HTML parsers👀
+      * ⚠️!= HTML W3C valid⚠️
+      * ⚠️!= Reac⚠️
+      * == HTML extension
+    * Vue compiles -- into -- highly-optimized JavaScript code
+  * allows you
+    * 💡bind declaratively the rendered DOM -- to the -- component instance's data💡
+      * == | change data -> DOM AUTOMATICALLY updated
+        * != imperative
+    * \+ reactivity system
+      * Vue 
+        * figures out the MINIMAL number of components to re-render
+          * == | app state changes, applies the MINIMAL amount of DOM manipulations 
+  * 👀ALTERNATIVE👀
+    * [DIRECTLY write render functions](../extras/render-function) + optional JSX support
+      * -- based on -- Virtual DOM concepts
+      * cons
+        * ❌NO compile-time optimizations❌
 
 ## Text Interpolation {#text-interpolation}
 
-The most basic form of data binding is text interpolation using the "Mustache" syntax (double curly braces):
+* MOST basic form of data binding
+  * "Mustache" syntax (`{{ }}`)
 
-```vue-html
-<span>Message: {{ msg }}</span>
-```
-
-The mustache tag will be replaced with the value of the `msg` property [from the corresponding component instance](/guide/essentials/reactivity-fundamentals#declaring-reactive-state). It will also be updated whenever the `msg` property changes.
+  ```vue-html
+  {{ someProperty }}
+  ```
+  * allows
+    * interpolate [component instance's property's value](reactivity-fundamentals.md#declaring-reactive-state--declaring-reactive-state)
+    * updated | ANYTIME `msg` property changes
 
 ## Raw HTML {#raw-html}
 
-The double mustaches interpret the data as plain text, not HTML. In order to output real HTML, you will need to use the [`v-html` directive](/api/built-in-directives#v-html):
+The double mustaches interpret the data as plain text, not HTML
+* In order to output real HTML, you will need to use the [`v-html` directive](/api/built-in-directives#v-html):
 
 ```vue-html
 <p>Using text interpolation: {{ rawHtml }}</p>
@@ -38,23 +54,31 @@ The double mustaches interpret the data as plain text, not HTML. In order to out
   <p>Using v-html directive: <span v-html="rawHtml"></span></p>
 </div>
 
-Here we're encountering something new. The `v-html` attribute you're seeing is called a **directive**. Directives are prefixed with `v-` to indicate that they are special attributes provided by Vue, and as you may have guessed, they apply special reactive behavior to the rendered DOM. Here, we're basically saying "keep this element's inner HTML up-to-date with the `rawHtml` property on the current active instance."
+Here we're encountering something new
+* The `v-html` attribute you're seeing is called a **directive**
+* Directives are prefixed with `v-` to indicate that they are special attributes provided by Vue, and as you may have guessed, they apply special reactive behavior to the rendered DOM
+* Here, we're basically saying "keep this element's inner HTML up-to-date with the `rawHtml` property on the current active instance."
 
-The contents of the `span` will be replaced with the value of the `rawHtml` property, interpreted as plain HTML - data bindings are ignored. Note that you cannot use `v-html` to compose template partials, because Vue is not a string-based templating engine. Instead, components are preferred as the fundamental unit for UI reuse and composition.
+The contents of the `span` will be replaced with the value of the `rawHtml` property, interpreted as plain HTML - data bindings are ignored
+* Note that you cannot use `v-html` to compose template partials, because Vue is not a string-based templating engine
+* Instead, components are preferred as the fundamental unit for UI reuse and composition.
 
 :::warning Security Warning
-Dynamically rendering arbitrary HTML on your website can be very dangerous because it can easily lead to [XSS vulnerabilities](https://en.wikipedia.org/wiki/Cross-site_scripting). Only use `v-html` on trusted content and **never** on user-provided content.
+Dynamically rendering arbitrary HTML on your website can be very dangerous because it can easily lead to [XSS vulnerabilities](https://en.wikipedia.org/wiki/Cross-site_scripting)
+* Only use `v-html` on trusted content and **never** on user-provided content.
 :::
 
 ## Attribute Bindings {#attribute-bindings}
 
-Mustaches cannot be used inside HTML attributes. Instead, use a [`v-bind` directive](/api/built-in-directives#v-bind):
+Mustaches cannot be used inside HTML attributes
+* Instead, use a [`v-bind` directive](/api/built-in-directives#v-bind):
 
 ```vue-html
 <div v-bind:id="dynamicId"></div>
 ```
 
-The `v-bind` directive instructs Vue to keep the element's `id` attribute in sync with the component's `dynamicId` property. If the bound value is `null` or `undefined`, then the attribute will be removed from the rendered element.
+The `v-bind` directive instructs Vue to keep the element's `id` attribute in sync with the component's `dynamicId` property
+* If the bound value is `null` or `undefined`, then the attribute will be removed from the rendered element.
 
 ### Shorthand {#shorthand}
 
@@ -64,7 +88,9 @@ Because `v-bind` is so commonly used, it has a dedicated shorthand syntax:
 <div :id="dynamicId"></div>
 ```
 
-Attributes that start with `:` may look a bit different from normal HTML, but it is in fact a valid character for attribute names and all Vue-supported browsers can parse it correctly. In addition, they do not appear in the final rendered markup. The shorthand syntax is optional, but you will likely appreciate it when you learn more about its usage later.
+Attributes that start with `:` may look a bit different from normal HTML, but it is in fact a valid character for attribute names and all Vue-supported browsers can parse it correctly
+* In addition, they do not appear in the final rendered markup
+* The shorthand syntax is optional, but you will likely appreciate it when you learn more about its usage later.
 
 > For the rest of the guide, we will be using the shorthand syntax in code examples, as that's the most common usage for Vue developers.
 
@@ -82,11 +108,13 @@ If the attribute has the same name as the variable name of the JavaScript value 
 <div v-bind:id></div>
 ```
 
-This is similar to the property shorthand syntax when declaring objects in JavaScript. Note this is a feature that is only available in Vue 3.4 and above.
+This is similar to the property shorthand syntax when declaring objects in JavaScript
+* Note this is a feature that is only available in Vue 3.4 and above.
 
 ### Boolean Attributes {#boolean-attributes}
 
-[Boolean attributes](https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#boolean-attributes) are attributes that can indicate true / false values by their presence on an element. For example, [`disabled`](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/disabled) is one of the most commonly used boolean attributes.
+[Boolean attributes](https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#boolean-attributes) are attributes that can indicate true / false values by their presence on an element
+* For example, [`disabled`](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/disabled) is one of the most commonly used boolean attributes.
 
 `v-bind` works a bit differently in this case:
 
@@ -94,7 +122,9 @@ This is similar to the property shorthand syntax when declaring objects in JavaS
 <button :disabled="isButtonDisabled">Button</button>
 ```
 
-The `disabled` attribute will be included if `isButtonDisabled` has a [truthy value](https://developer.mozilla.org/en-US/docs/Glossary/Truthy). It will also be included if the value is an empty string, maintaining consistency with `<button disabled="">`. For other [falsy values](https://developer.mozilla.org/en-US/docs/Glossary/Falsy) the attribute will be omitted.
+The `disabled` attribute will be included if `isButtonDisabled` has a [truthy value](https://developer.mozilla.org/en-US/docs/Glossary/Truthy)
+* It will also be included if the value is an empty string, maintaining consistency with `<button disabled="">`
+* For other [falsy values](https://developer.mozilla.org/en-US/docs/Glossary/Falsy) the attribute will be omitted.
 
 ### Dynamically Binding Multiple Attributes {#dynamically-binding-multiple-attributes}
 
@@ -134,7 +164,8 @@ You can bind them to a single element by using `v-bind` without an argument:
 
 ## Using JavaScript Expressions {#using-javascript-expressions}
 
-So far we've only been binding to simple property keys in our templates. But Vue actually supports the full power of JavaScript expressions inside all data bindings:
+So far we've only been binding to simple property keys in our templates
+* But Vue actually supports the full power of JavaScript expressions inside all data bindings:
 
 ```vue-html
 {{ number + 1 }}

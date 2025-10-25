@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Declarative Data Binding Demo</title>
+</head>
+<body>
+    <div id="app">
+        <!-- DECLARATIVE == declare what to show-->
+        <h1>{{ title }}</h1>
+        <p>Count: {{ count }}</p>
+        <p>Double: {{ doubleCount }}</p>
+        <input v-model="message" placeholder="Type something">
+        <p>You typed: {{ message }}</p>
+        <button @click="increment">Increment</button>
+        <div v-if="showDetails">
+            <p>Details are visible when count > 5</p>
+        </div>
+    </div>
+
+    <!-- via CDN -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        const { createApp } = Vue
+
+        // Component instance's data
+        const componentData = {
+            title: 'Declarative Binding Demo',
+            count: 0,
+            message: ''
+        }
+
+        createApp({
+            data() {
+                return componentData
+            },
+            computed: {
+                doubleCount() {
+                    return this.count * 2
+                },
+                showDetails() {
+                    return this.count > 5
+                }
+            },
+            methods: {
+                increment() {
+                    this.count++
+                    console.log('Data changed:', this.count)
+                    console.log('DOM automatically updated!')
+                }
+            },
+            mounted() {
+                console.log('🔗 DECLARATIVE BINDING ESTABLISHED:')
+                console.log('Template declares WHAT to show')
+                console.log('Vue automatically binds DOM to data')
+
+                // Demonstrate programmatic vs declarative
+                setTimeout(() => {
+                    console.log('\n📝 Changing data programmatically...')
+                    this.title = 'Title Changed!'
+                    this.message = 'Auto-updated!'
+                    console.log('✅ DOM updated automatically (declarative)')
+                }, 3000)
+            }
+        }).mount('#app')
+
+        // Show the difference with imperative approach
+        console.log('\n🔄 IMPERATIVE vs DECLARATIVE:')
+        console.log('Imperative: HOW to update DOM step by step')
+        console.log('Declarative: WHAT the DOM should look like')
+    </script>
+</body>
+</html>

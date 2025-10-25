@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Minimal Re-render Demo</title>
+    <style>
+        .component { border: 1px solid #ccc; margin: 10px; padding: 10px; }
+        .updated { background-color: #ffffcc; }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h2>Vue Minimal Re-render Test</h2>
+        <p>Change data and see which components re-render (yellow background)</p>
+        
+        <!-- Parent Component -->
+        <div class="component">
+            <h3>Parent Component</h3>
+            <p>Parent counter: {{ parentCount }}</p>
+            <button @click="incrementParent">Increment Parent</button>
+            
+            <!-- Child A - depends on parentCount -->
+            <child-a :count="parentCount"></child-a>
+            
+            <!-- Child B - independent data -->
+            <child-b></child-b>
+            
+            <!-- Child C - depends on parentCount -->
+            <child-c :count="parentCount"></child-c>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        const { createApp } = Vue
+
+        // Child Component A
+        const ChildA = {
+            props: ['count'],
+            template: `
+                <div class="component" ref="element">
+                    <h4>Child A (depends on parent count)</h4>
+                    <p>Received count: {{ count }}</p>
+                    <p>Render count: {{ renderCount }}</p>
+                </div>
+            `,
+            data() {
+                return { renderCount: 0 }
+            },
+            updated() {
+                this.renderCount++
+                this.highlightUpdate()
+                console.log('🔄 Child A re-rendered')
+            },
+            methods: {
+                highlightUpdate() {
+                    this.$refs.element.classList.add('updated')
+                    setTimeout(() => {
+                        this.$refs.element.classList.remove('updated')
+                    }, 1000)
+                }
+            }
+        }
+
+        // Child Component B - Independent
+        const ChildB = {
+            template: `
+                <div class="component" ref="element">
+                    <h4>Child B (independent)</h4>
+                    <p>Own counter: {{ ownCount }}</p>
+                    <p>Render count: {{ renderCount }}</p>
+                    <button @click="ownCount++">Increment Own</button>
+                </div>
+            `,
+            data() {
+                return { 
+                    ownCount: 0,
+                    renderCount: 0 
+                }
+            },
+            updated() {
+                this.renderCount++
+                this.highlightUpdate()
+                console.log('🔄 Child B re-rendered')
+            },
+            methods: {
+                highlightUpdate() {
+                    this.$refs.element.classList.add('updated')
+                    setTimeout(() => {
+                        this.$refs.element.classList.remove('updated')
+                    }, 1000)
+                }
+            }
+        }
+
+        // Child Component C
+        const ChildC = {
+            props: ['count'],
+            template: `
+                <div class="component" ref="element">
+                    <h4>Child C (depends on parent count)</h4>
+                    <p>Double count: {{ count * 2 }}</p>
+                    <p>Render count: {{ renderCount }}</p>
+                </div>
+            `,
+            data() {
+                return { renderCount: 0 }
+            },
+            updated() {
+                this.renderCount++
+                this.highlightUpdate()
+                console.log('🔄 Child C re-rendered')
+            },
+            methods: {
+                highlightUpdate() {
+                    this.$refs.element.classList.add('updated')
+                    setTimeout(() => {
+                        this.$refs.element.classList.remove('updated')
+                    }, 1000)
+                }
+            }
+        }
+
+        createApp({
+            components: {
+                ChildA,
+                ChildB,
+                ChildC
+            },
+            data() {
+                return {
+                    parentCount: 0
+                }
+            },
+            methods: {
+                incrementParent() {
+                    this.parentCount++
+                    console.log('\n🎯 MINIMAL RE-RENDER TEST:')
+                    console.log('Changed parentCount to:', this.parentCount)
+                    console.log('Expected: Parent + Child A + Child C re-render')
+                    console.log('Expected: Child B should NOT re-render')
+                }
+            },
+            updated() {
+                console.log('🔄 Parent re-rendered')
+            }
+        }).mount('#app')
+
+        console.log('🧪 TEST INSTRUCTIONS:')
+        console.log('1. Click "Increment Parent" - only Parent, Child A, Child C re-render')
+        console.log('2. Click "Increment Own" in Child B - only Child B re-renders')
+        console.log('3. Watch console and yellow highlights to see minimal re-renders')
+    </script>
+</body>
+</html>

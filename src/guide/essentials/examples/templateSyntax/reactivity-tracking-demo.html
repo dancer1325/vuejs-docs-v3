@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reactivity Tracking Demo</title>
+</head>
+<body>
+    <div id="app">
+        <h2>Vue Reactivity Tracking</h2>
+        
+        <div>
+            <h3>Data Properties</h3>
+            <p>Name: {{ name }} (renders: {{ nameRenders }})</p>
+            <p>Age: {{ age }} (renders: {{ ageRenders }})</p>
+            <p>City: {{ city }} (renders: {{ cityRenders }})</p>
+        </div>
+
+        <div>
+            <h3>Controls</h3>
+            <button @click="changeName">Change Name</button>
+            <button @click="changeAge">Change Age</button>
+            <button @click="changeCity">Change City</button>
+        </div>
+
+        <div>
+            <h3>Computed Properties</h3>
+            <p>Full Info: {{ fullInfo }} (computes: {{ fullInfoComputes }})</p>
+            <p>Age Category: {{ ageCategory }} (computes: {{ ageCategoryComputes }})</p>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        const { createApp } = Vue
+
+        createApp({
+            data() {
+                return {
+                    name: 'John',
+                    age: 25,
+                    city: 'Madrid',
+                    nameRenders: 0,
+                    ageRenders: 0,
+                    cityRenders: 0,
+                    fullInfoComputes: 0,
+                    ageCategoryComputes: 0
+                }
+            },
+            computed: {
+                fullInfo() {
+                    this.fullInfoComputes++
+                    console.log('🔄 fullInfo computed (depends on name + city)')
+                    return `${this.name} from ${this.city}`
+                },
+                ageCategory() {
+                    this.ageCategoryComputes++
+                    console.log('🔄 ageCategory computed (depends on age)')
+                    return this.age < 30 ? 'Young' : 'Adult'
+                }
+            },
+            watch: {
+                name() {
+                    this.nameRenders++
+                    console.log('👀 Name changed - only name-dependent parts update')
+                },
+                age() {
+                    this.ageRenders++
+                    console.log('👀 Age changed - only age-dependent parts update')
+                },
+                city() {
+                    this.cityRenders++
+                    console.log('👀 City changed - only city-dependent parts update')
+                }
+            },
+            methods: {
+                changeName() {
+                    this.name = this.name === 'John' ? 'Jane' : 'John'
+                    console.log('\n🎯 CHANGED NAME:')
+                    console.log('Expected: name display + fullInfo should update')
+                    console.log('Expected: age display + ageCategory should NOT update')
+                },
+                changeAge() {
+                    this.age = this.age === 25 ? 35 : 25
+                    console.log('\n🎯 CHANGED AGE:')
+                    console.log('Expected: age display + ageCategory should update')
+                    console.log('Expected: name display + fullInfo should NOT update')
+                },
+                changeCity() {
+                    this.city = this.city === 'Madrid' ? 'Barcelona' : 'Madrid'
+                    console.log('\n🎯 CHANGED CITY:')
+                    console.log('Expected: city display + fullInfo should update')
+                    console.log('Expected: age display + ageCategory should NOT update')
+                }
+            }
+        }).mount('#app')
+
+        console.log('🧪 REACTIVITY TEST:')
+        console.log('Vue tracks dependencies and only updates what changed')
+        console.log('Watch the render counters and console logs')
+    </script>
+</body>
+</html>
